@@ -1,9 +1,23 @@
 'use strict';
 
-angular.module('cal').directive('keyCheck', ["$document",
-	function($document) {
+angular.module('cal')
+    .directive('calApp',function(){
         return {
             restrict:"E",
+            controller:"CalController",
+            templateUrl:"modules/cal/views/cal.client.view.html"
+        };
+    })
+    .directive('historyPart',function(){
+        return {
+            restrict:"E",
+            controller:"HistoryController",
+            templateUrl:"modules/cal/views/history.client.view.html"
+        };
+    })
+    .directive('keyCheck', ["$document",
+	function($document) {
+        return {
             controller:"CalController",
             link:function($scope){
 
